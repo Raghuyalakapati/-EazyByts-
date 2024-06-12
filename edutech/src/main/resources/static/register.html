@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+<style>
+   
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(167, 204, 241);
+}
+.container{
+       background-color: rgb(255, 255, 255);
+       width: 1000px ;
+       height: 600px;
+       border-radius: 1em;
+       box-shadow: 2px 3px 23px rgb(145, 56, 56);
+}
+
+ h2{
+  text-align:center ;
+  color: rgb(0, 88, 117);
+}
+.inp #Hello{
+  text-align: center;
+  color: rgb(0, 88, 117);
+}
+form{
+  height: 300px;
+  width: 400px;
+  border-radius: 5px;
+  padding:20px;
+  transform: translate(120%,-2%);
+}
+
+.inp input{
+  width: 70%;
+  height: 23px;
+  margin: 20px 20px 20px 54px;
+  position: relative; 
+  padding: 5px 2px 5px 6px;
+  border: none ;
+  border-bottom: 1px solid rgb(122, 122, 122);
+} 
+input:focus{
+  border: none;
+  outline: none;
+  border: 1px solid #3483eb;
+  border-radius: 5px;
+}
+
+   button{
+    color: white;
+    border: none;
+    background-color: cornflowerblue;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 20px;
+    width:80%;
+    height: 35px;
+    transform: translate(12%,20%);
+    border-color: aliceblue;
+    transition: 0.5s;
+   } 
+   button:hover{
+    background-color: transparent;
+    border: 1px solid cornflowerblue;
+    color: cornflowerblue;
+    cursor: pointer;
+    box-shadow: 3px 4px 25px rgb(7, 92, 162);
+   }
+   .img1{
+   position: relative;
+   }
+    img{
+      width: 540px;
+      position: absolute;
+      top: 25%;
+      transform: translate(10%,-45%);
+   }
+   .dropdown{
+    margin-bottom: 15px;
+      
+   }
+   .dropdown select{
+    color: rgb(117, 117, 117);
+    width: 70%;
+    height: 35px;
+    margin-left: 58px;
+    margin-top: 20px;
+    border: none ;
+    border-bottom: 1px solid rgb(57, 56, 56);
+   }
+.dropdown select option{
+  font-size: 15px;
+  font-weight: 50;
+  color: rgb(90, 90, 90);
+}
+
+.err{
+    color: red;
+    padding: 50px;
+}
+
+/* Responsive using mediaQueries */
+
+
+
+
+</style>
+</head>
+<body>
+  <div class="img1">
+    <img src="images/contact (1).png"> 
+  </div>
+  <div class="container">
+      <form name="register"  method="post" action="register" id="fff">
+          <h2>Register Now</h2>
+            <div class="inp">
+              <input type="text" id="fname" name="firstname"  placeholder="FirstName" required>
+              <span id="spanfname" class="err"></span>
+                </div>
+            <div class="inp">
+              <input type="text" id="lname" name="lastame" placeholder="LastName" required >
+              <span id="spanlname" class="err"></span>
+              </div>
+            <div class="inp">
+              <input type="text" id="email" name="email" placeholder="Email" required>
+              <span id="spannemail" class="err"></span>
+              </div>
+            <div class="inp">
+              <input type="password"id="pwd1" name="password" placeholder="Password" required>
+              <span id="spanpwd1" class="err"></span>
+              </div>
+            <div class="inp">
+              <input type="password"  id="pwd2"  placeholder="ConfirmPassword" required>
+              <span id="spanpwd2" class="err"></span>
+              <span id="spanmatch" class="err"></span>
+              </div>
+           <div>
+              <button type="submit"  id="sub" >Submit</button>
+           </div>
+      </form>
+</div>
+
+    <script src="app.js"></script>
+</body>
+</html>

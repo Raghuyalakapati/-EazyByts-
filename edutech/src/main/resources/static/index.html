@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>E-Learning Platform</title>
+	    <link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	<body>
+	    <header>
+	        <h1>Welcome to the E-Learning Platform</h1>
+	    </header>
+	    <main>
+	        <section id="course-creation">
+	            <h2>Create a Course</h2>
+	            <form id="create-course-form">
+	                <label for="course-name">Course Name:</label>
+	                <input type="text" id="course-name" name="course-name" required>
+	                <label for="course-description">Course Description:</label>
+	                <textarea id="course-description" name="course-description" required></textarea>
+	                <button type="submit">Create Course</button>
+	            </form>
+	        </section>
+	        <section id="courses">
+	            <h2>Available Courses</h2>
+	            <div id="course-list"></div>
+	        </section>
+	    </main>
+	    
+	    <script>
+			document.getElementById('create-course-form').addEventListener('submit', function(event) {
+		    event.preventDefault();
+		    const courseName = document.getElementById('course-name').value;
+		    const courseDescription = document.getElementById('course-description').value;
+	    
+	    // Call the API to create a course
+	    fetch('/api/courses', {
+	        method: 'POST',
+	        headers: {
+	            'Content-Type': 'application/json'
+	        },
+	        body: JSON.stringify({ name: courseName, description: courseDescription })
+	    })
+	    .then(response => response.json())
+	    .then(course => {
+	        // Add the new course to the course list
+	        const courseList = document.getElementById('course-list');
+	        const courseItem = document.createElement('div');
+	        courseItem.textContent = `${course.name}: ${course.description}`;
+	        courseList.appendChild(courseItem);
+	    });
+	});
+	
+			
+			
+		</script>
+	</body>
+</html>
